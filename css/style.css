@@ -178,6 +178,7 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 8px;
+  color: var(--accent-cyan); /* Fallback color */
   background: var(--gradient-secondary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1244,6 +1245,13 @@ body {
 /* ========================================
    SCROLLBAR STYLES
 ======================================== */
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-purple) var(--bg-primary);
+}
+
+/* WebKit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
   width: 8px;
 }

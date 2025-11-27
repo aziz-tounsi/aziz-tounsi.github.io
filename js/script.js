@@ -173,12 +173,12 @@ function initParticleBackground() {
   let particles = [];
   let animationId;
   
-  // Configuration
+  // Configuration - reduced for better performance
   const config = {
-    particleCount: 80,
+    particleCount: 50, // Reduced from 80 for better performance
     particleSize: { min: 1, max: 3 },
     speed: { min: 0.2, max: 0.8 },
-    connectionDistance: 150,
+    connectionDistance: 120, // Reduced for fewer connection calculations
     colors: ['#667eea', '#64ffda', '#f093fb', '#4facfe']
   };
 
