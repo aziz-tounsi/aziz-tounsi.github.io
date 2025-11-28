@@ -32,9 +32,22 @@ portfolio/
 ├── js/
 │   └── script.js
 ├── assets/
-│   └── (images)
+│   ├── README.md
+│   ├── profile.png
+│   ├── sage-stone-preview.png
+│   └── educap-preview.png
 └── README.md
 ```
+
+## 🖼️ Required Images
+
+To complete the portfolio, add the following images to the `assets/` folder:
+
+1. **profile.png** - Profile avatar image (3D avatar or professional photo)
+2. **sage-stone-preview.png** - Screenshot of https://site-vitrine-khaki.vercel.app
+3. **educap-preview.png** - Screenshot of https://educap-assistant-production-7178.up.railway.app
+
+See `assets/README.md` for more details on image requirements.
 
 ## 🚀 Deployment
 
