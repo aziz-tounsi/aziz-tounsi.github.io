@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initScrollAnimations();
   initSkillBars();
   initParticleBackground();
+  initMobileNavSlideHint();
 });
 
 /* ========================================
@@ -373,3 +374,29 @@ window.addEventListener('load', () => {
     }
   }, 300);
 });
+
+/* ========================================
+   MOBILE NAVIGATION SLIDE HINT
+======================================== */
+function initMobileNavSlideHint() {
+  const navTabs = document.querySelector('.nav-tabs');
+  
+  // Check if mobile
+  if (window.innerWidth <= 768 && navTabs) {
+    // Calculate dynamic scroll distance based on container width
+    const scrollDistance = Math.min(navTabs.scrollWidth - navTabs.clientWidth, navTabs.clientWidth * 0.3);
+    
+    // Add slide hint class after a short delay
+    setTimeout(() => {
+      navTabs.classList.add('slide-hint');
+      
+      // Also physically scroll to show there's more content
+      navTabs.scrollTo({ left: scrollDistance, behavior: 'smooth' });
+      
+      setTimeout(() => {
+        navTabs.scrollTo({ left: 0, behavior: 'smooth' });
+        navTabs.classList.remove('slide-hint');
+      }, 800);
+    }, 500);
+  }
+}

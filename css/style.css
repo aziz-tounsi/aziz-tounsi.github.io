@@ -702,16 +702,32 @@ body {
   box-shadow: var(--shadow-glow);
 }
 
-/* Portfolio Image Fix */
+/* Portfolio Image - Match actual image aspect ratio (1893x865 = 2.19:1) */
 .portfolio-image {
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 45.7%; /* 865/1893 = 0.457 = 45.7% for 2.19:1 aspect ratio */
   background: var(--bg-tertiary);
   overflow: hidden;
 }
 
+.portfolio-preview-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-normal);
+}
+
+.portfolio-card:hover .portfolio-preview-img {
+  transform: scale(1.02);
+}
+
+/* For icons (projects without images) */
 .portfolio-icon {
   position: absolute;
   top: 50%;
@@ -813,7 +829,7 @@ body {
   color: var(--accent-cyan);
 }
 
-/* Skill Bars */
+/* Animated Skill Bars */
 .skills-bars {
   display: grid;
   gap: 20px;
@@ -824,30 +840,40 @@ body {
   backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   border-radius: 12px;
-  padding: 15px 20px;
+  padding: 18px 22px;
+  transition: all var(--transition-normal);
+}
+
+.skill-item:hover {
+  transform: translateX(5px);
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-glow);
 }
 
 .skill-info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .skill-name {
   font-weight: 500;
   color: var(--text-primary);
+  font-size: 0.95rem;
 }
 
 .skill-percent {
   color: var(--accent-cyan);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
 .skill-bar {
-  height: 8px;
+  height: 10px;
   background: var(--bg-tertiary);
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
 }
 
 .skill-progress {
@@ -856,7 +882,34 @@ body {
   border-radius: 10px;
   width: 0;
   transition: width 1.5s ease-out;
-  box-shadow: 0 0 10px var(--accent-purple);
+  box-shadow: 0 0 15px var(--accent-purple);
+  position: relative;
+}
+
+/* Glowing animation on the progress bar */
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
 }
 
 /* Skill Tags */
@@ -1155,10 +1208,11 @@ body {
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
     gap: 5px;
-    padding: 8px;
+    padding: 8px 10px;
     justify-content: flex-start;
   }
   
@@ -1168,9 +1222,29 @@ body {
   
   .tab-btn {
     flex: 0 0 auto;
-    padding: 10px 15px;
+    padding: 10px 16px;
     font-size: 0.85rem;
     white-space: nowrap;
+  }
+  
+  /* Auto-slide animation hint */
+  .nav-tabs.slide-hint {
+    animation: slideHint 1.5s ease-in-out;
+  }
+  
+  @keyframes slideHint {
+    0% {
+      transform: translateX(0);
+    }
+    30% {
+      transform: translateX(-50px);
+    }
+    60% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
   
   .services-grid {
@@ -1223,7 +1297,7 @@ body {
   }
   
   .tab-btn {
-    padding: 8px 12px;
+    padding: 8px 14px;
     font-size: 0.8rem;
   }
   
@@ -1289,26 +1363,4 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-}
-
-/* Portfolio Preview Images */
-.portfolio-preview-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transition: all var(--transition-normal);
-}
-
-/* Alternative: If you want to show full image without cropping */
-.portfolio-image.contain .portfolio-preview-img {
-  object-fit: contain;
-  background: var(--bg-tertiary);
-}
-
-.portfolio-card:hover .portfolio-preview-img {
-  transform: scale(1.05);
 }
