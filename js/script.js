@@ -20,11 +20,10 @@ function initTypingEffect() {
   if (!typingElement) return;
 
   const texts = [
-    'Software Developer',
-    'AI Developer', 
-    'Web Developer',
-    'Machine Learning Enthusiast',
-    'Full Stack Developer'
+    'Software Engineer',
+    'Full Stack Developer', 
+    'AI Developer',
+    'Web Developer'
   ];
   
   let textIndex = 0;
