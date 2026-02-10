@@ -42,27 +42,33 @@
       width: 100%;
       max-width: 100%;
       margin-bottom: 30px;
-      display: flex;
-      flex-direction: row;
+      display: flex !important;
+      flex-direction: row !important;
       align-items: center;
       padding: 15px;
       gap: 20px;
     }
     .featured-project-small .portfolio-image {
-      flex: 0 0 45%;
-      max-width: 45%;
+      flex: 0 0 45% !important;
+      max-width: 45% !important;
+      min-width: 45% !important;
       border-radius: 10px;
       overflow: hidden;
       margin: 0;
       padding: 0;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
     }
     .featured-project-small .portfolio-image img {
       width: 100%;
       height: auto;
       object-fit: cover;
-      display: block;
+      display: block !important;
       margin: 0;
       padding: 0;
+      visibility: visible !important;
+      opacity: 1 !important;
     }
     .featured-project-small .portfolio-content {
       flex: 1;
