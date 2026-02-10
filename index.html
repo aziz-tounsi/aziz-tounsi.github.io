@@ -7,7 +7,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-10REP4CN0B');
   </script>
 
@@ -31,13 +30,111 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- 
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Minimal additions (won't break your theme) -->
+  <style>
+    .featured-project {
+      margin-bottom: 28px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(20, 20, 32, 0.55);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .featured-project-inner{
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 18px;
+      padding: 18px;
+      align-items: center;
+    }
+    .featured-project img{
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      display: block;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .featured-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(120, 90, 255, 0.18);
+      border: 1px solid rgba(120, 90, 255, 0.30);
+      margin-bottom: 10px;
+    }
+    .featured-title{
+      font-size: 20px;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+    .impact-line{
+      margin: 0 0 10px 0;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+    .impact-line b{
+      color: #a9a1ff;
+      font-weight: 700;
+    }
+    .featured-desc{
+      margin: 0 0 14px 0;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+    .featured-cta{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .cta-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(90, 90, 120, 0.25);
+      color: inherit;
+    }
+    .cta-btn.primary{
+      background: rgba(120, 90, 255, 0.35);
+      border-color: rgba(120, 90, 255, 0.45);
+    }
+    .quick-stack{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top: 10px;
+    }
+    .quick-stack span{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Mobile */
+    @media (max-width: 900px){
+      .featured-project-inner{
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <!-- Particle Background Canvas -->
   <canvas id="particles"></canvas>
@@ -95,99 +192,203 @@
 
     <!-- Main Content -->
     <main class="main-content">
-      <!-- Navigation Tabs -->
+      <!-- Navigation Tabs (reordered: Proof first) -->
       <nav class="nav-tabs">
-        <button class="tab-btn active" data-tab="about">About</button>
+        <button class="tab-btn active" data-tab="portfolio">Portfolio</button>
         <button class="tab-btn" data-tab="resume">Resume</button>
-        <button class="tab-btn" data-tab="portfolio">Portfolio</button>
         <button class="tab-btn" data-tab="skills">Skills</button>
+        <button class="tab-btn" data-tab="about">About</button>
         <button class="tab-btn" data-tab="contact">Contact</button>
       </nav>
 
       <!-- Tab Contents -->
       <div class="tab-contents">
-        <!-- About Tab -->
-        <section id="about" class="tab-content active">
+
+        <!-- Portfolio Tab (NOW DEFAULT) -->
+        <section id="portfolio" class="tab-content active">
           <header class="section-header">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">Portfolio</h2>
             <div class="title-decoration"></div>
           </header>
 
-          <div class="about-text fade-in">
-            <p>
-              Software Engineering student with experience in full-stack development, LLM-powered applications, and real-time systems. Skilled in C#, Python, JavaScript, TypeScript, React, Node.js, Flutter, and modern AI tools.
-            </p>
+          <!-- Featured Project (forces clicks) -->
+          <div class="featured-project fade-in">
+            <div class="featured-project-inner">
+              <div>
+                <div class="featured-badge">
+                  <i class="fas fa-star"></i>
+                  <span>Featured project</span>
+                </div>
+
+                <h3 class="featured-title">Educap LLM Chatbot (Real-time)</h3>
+
+                <p class="impact-line">
+                  <b>Impact:</b> Reduced response latency by <b>30%</b> with streaming + Socket.IO architecture.
+                </p>
+
+                <p class="featured-desc">
+                  A multilingual LLM assistant with conversational memory and automatic EN/FR/AR/TN language detection,
+                  deployed behind Nginx + Gunicorn with HTTPS/TLS.
+                </p>
+
+                <div class="featured-cta">
+                  <a href="https://educap-assistant.fly.dev/" target="_blank" rel="noopener"
+                     class="cta-btn primary ga-track"
+                     data-ga-event="project_demo"
+                     data-ga-label="educap_llm_chatbot">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Open Live Demo</span>
+                  </a>
+
+                  <a href="mailto:jdfreg1@gmail.com?subject=Interview%20-%20Aziz%20Tounsi%20Portfolio&body=Hi%20Aziz%2C%0A%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20talk%20about%20..."
+                     class="cta-btn ga-track"
+                     data-ga-event="contact_email"
+                     data-ga-label="featured_contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email me</span>
+                  </a>
+
+                  <a href="#" class="cta-btn ga-track"
+                     data-ga-event="nav_to_resume"
+                     data-ga-label="featured_resume"
+                     onclick="document.querySelector('[data-tab=&quot;resume&quot;]')?.click(); return false;">
+                    <i class="fas fa-file-alt"></i>
+                    <span>See Resume</span>
+                  </a>
+                </div>
+
+                <div class="quick-stack">
+                  <span>Python</span><span>Flask</span><span>LangChain</span><span>Gemini</span><span>Socket.IO</span><span>Nginx</span>
+                </div>
+              </div>
+
+              <div>
+                <img src="assets/educap-preview.png" alt="Educap LLM Chatbot preview">
+              </div>
+            </div>
           </div>
 
-          <h3 class="subsection-title fade-in">What I'm Doing</h3>
-
-          <div class="services-grid">
-            <article class="service-card fade-in">
-              <div class="service-icon">
-                <i class="fas fa-robot"></i>
+          <div class="portfolio-grid">
+            <article class="portfolio-card fade-in">
+              <div class="portfolio-image">
+                <img src="assets/educap-preview.png" alt="Educap AI Assistant" class="portfolio-preview-img">
               </div>
-              <div class="service-content">
-                <h4>AI Development</h4>
-                <p>Building intelligent chatbots and LLM-powered applications with Python, LangChain, and modern AI tools.</p>
+              <div class="portfolio-buttons">
+                <a href="https://educap-assistant.fly.dev/" target="_blank" rel="noopener" class="portfolio-btn ga-track"
+                   data-ga-event="project_demo" data-ga-label="educap_llm_chatbot">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/aziz-tounsi" target="_blank" rel="noopener" class="portfolio-btn ga-track"
+                   data-ga-event="project_github" data-ga-label="educap_llm_chatbot">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+                </a>
               </div>
-            </article>
-
-            <article class="service-card fade-in">
-              <div class="service-icon">
-                <i class="fas fa-code"></i>
-              </div>
-              <div class="service-content">
-                <h4>Web Development</h4>
-                <p>Creating responsive, modern web applications using React, ASP.NET, and full-stack technologies.</p>
-              </div>
-            </article>
-
-            <article class="service-card fade-in">
-              <div class="service-icon">
-                <i class="fas fa-database"></i>
-              </div>
-              <div class="service-content">
-                <h4>Database Design</h4>
-                <p>Designing efficient database schemas and implementing data-driven solutions with SQL Server and PostgreSQL.</p>
+              <div class="portfolio-content">
+                <h4>Educap LLM Chatbot</h4>
+                <p><b>Impact:</b> Real-time streaming chat, multilingual memory, auto language detection.</p>
+                <div class="portfolio-tags">
+                  <span>Python</span>
+                  <span>Flask</span>
+                  <span>LangChain</span>
+                  <span>Gemini</span>
+                  <span>Socket.IO</span>
+                </div>
               </div>
             </article>
 
-            <article class="service-card fade-in">
-              <div class="service-icon">
-                <i class="fas fa-users"></i>
+            <article class="portfolio-card fade-in">
+              <div class="portfolio-image">
+                <img src="assets/sage-stone-preview.png" alt="SAGE & STONE E-commerce" class="portfolio-preview-img">
               </div>
-              <div class="service-content">
-                <h4>Agile Teamwork</h4>
-                <p>Collaborating effectively in Scrum teams, contributing to sprints, and delivering quality software.</p>
+              <div class="portfolio-buttons">
+                <a href="https://sage-and-stone.vercel.app/" target="_blank" rel="noopener" class="portfolio-btn ga-track"
+                   data-ga-event="project_demo" data-ga-label="sage_stone_ecommerce">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/medaziztounsi2004/site-vitrine" target="_blank" rel="noopener" class="portfolio-btn ga-track"
+                   data-ga-event="project_github" data-ga-label="sage_stone_ecommerce">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+              <div class="portfolio-content">
+                <h4>SAGE &amp; STONE E-commerce Store</h4>
+                <p><b>Impact:</b> Cut page load time by <b>22%</b> using API optimization + caching.</p>
+                <div class="portfolio-tags">
+                  <span>React</span>
+                  <span>TypeScript</span>
+                  <span>Node.js</span>
+                  <span>Supabase</span>
+                  <span>JWT</span>
+                </div>
               </div>
             </article>
 
-            <article class="service-card fade-in">
-              <div class="service-icon">
-                <i class="fas fa-mobile-alt"></i>
+            <article class="portfolio-card fade-in">
+              <div class="portfolio-image">
+                <img src="assets/rytto-preview.png" alt="Rytto Habit Tracker" class="portfolio-preview-img">
               </div>
-              <div class="service-content">
-                <h4>Mobile Development</h4>
-                <p>Building cross-platform mobile apps using Flutter and React Native with modern UI/UX design.</p>
+              <div class="portfolio-buttons">
+                <a href="https://rytto.vercel.app/" target="_blank" rel="noopener" class="portfolio-btn ga-track"
+                   data-ga-event="project_demo" data-ga-label="rytto_habit_tracker">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/medaziztounsi2004/habit-tracker-app/releases/tag/v1.0.0" target="_blank" rel="noopener" class="portfolio-btn ga-track"
+                   data-ga-event="project_apk" data-ga-label="rytto_habit_tracker">
+                  <i class="fab fa-android"></i>
+                  <span>Download APK</span>
+                </a>
+              </div>
+              <div class="portfolio-content">
+                <h4>Rytto - Habit Tracker App</h4>
+                <p><b>Impact:</b> Gamification + streaks + analytics with fast offline persistence.</p>
+                <div class="portfolio-tags">
+                  <span>Flutter</span>
+                  <span>Dart</span>
+                  <span>Hive</span>
+                  <span>Provider</span>
+                  <span>Material Design</span>
+                </div>
               </div>
             </article>
-          </div>
 
-          <!-- Languages -->
-          <h3 class="subsection-title fade-in">Languages</h3>
-          <div class="languages-grid fade-in">
-            <div class="language-card">
-              <span class="language-name">English</span>
-              <span class="language-level">Fluent</span>
-            </div>
-            <div class="language-card">
-              <span class="language-name">French</span>
-              <span class="language-level">Intermediate</span>
-            </div>
-            <div class="language-card">
-              <span class="language-name">Arabic</span>
-              <span class="language-level">Native</span>
-            </div>
+            <article class="portfolio-card fade-in">
+              <div class="portfolio-image">
+                <img src="assets/pythaonelandingpage.jpg" alt="Pythaone Student Portal" class="portfolio-preview-img">
+              </div>
+              <div class="portfolio-buttons">
+                <a href="https://github.com/buzzmeric-bit/studentportal" target="_blank" rel="noopener" class="portfolio-btn ga-track"
+                   data-ga-event="project_github" data-ga-label="pythaone_student_portal">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+                <a href="assets/StudentPortal.mp4" target="_blank" rel="noopener" class="portfolio-btn ga-track"
+                   data-ga-event="project_video" data-ga-label="pythaone_student_portal_v1">
+                  <i class="fas fa-video"></i>
+                  <span>VD1</span>
+                </a>
+                <a href="assets/AdminDashboard.mp4" target="_blank" rel="noopener" class="portfolio-btn ga-track"
+                   data-ga-event="project_video" data-ga-label="pythaone_student_portal_v2">
+                  <i class="fas fa-video"></i>
+                  <span>VD2</span>
+                </a>
+              </div>
+              <div class="portfolio-content">
+                <h4>Pythaone - Student Portal</h4>
+                <p><b>Impact:</b> Multi-role portal (admin/manager/student) with secure RLS + analytics.</p>
+                <div class="portfolio-tags">
+                  <span>Flutter</span>
+                  <span>Dart</span>
+                  <span>Supabase</span>
+                  <span>PostgreSQL</span>
+                  <span>Multi-tenant</span>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
@@ -214,6 +415,7 @@
                   <ul class="timeline-details">
                     <li>Program fully taught in English (all courses, projects, and reports)</li>
                     <li>GPA: 3.0</li>
+                    <li><b>Availability:</b> Open to internship / PFE opportunities.</li>
                   </ul>
                 </div>
               </div>
@@ -239,11 +441,13 @@
                     <li>Built a real-time streaming chat API that reduced response latency by 30%.</li>
                     <li>Deployed production infrastructure using Nginx, Gunicorn, HTTPS/TLS.</li>
                   </ul>
-                  <a href="https://educap-assistant.fly.dev/" target="_blank" rel="noopener" class="project-link">
+                  <a href="https://educap-assistant.fly.dev/" target="_blank" rel="noopener" class="project-link ga-track"
+                     data-ga-event="resume_demo" data-ga-label="educap_llm_chatbot">
                     <i class="fas fa-external-link-alt"></i> Live Demo
                   </a>
                 </div>
               </div>
+
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
@@ -257,11 +461,13 @@
                     <li>Reduced page load time by 22% through optimized API and caching logic.</li>
                     <li>Deployed to Vercel (frontend) and Render (backend) with automated CI/CD.</li>
                   </ul>
-                  <a href="https://sage-and-stone.vercel.app/" target="_blank" rel="noopener" class="project-link">
+                  <a href="https://sage-and-stone.vercel.app/" target="_blank" rel="noopener" class="project-link ga-track"
+                     data-ga-event="resume_demo" data-ga-label="sage_stone_ecommerce">
                     <i class="fas fa-external-link-alt"></i> Live Demo
                   </a>
                 </div>
               </div>
+
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
@@ -274,11 +480,13 @@
                     <li>Developed comprehensive features: timetables, grades, absences, payments, and announcements.</li>
                     <li>Designed complex relational database with proper normalization and constraints.</li>
                   </ul>
-                  <a href="https://github.com/buzzmeric-bit/studentportal" target="_blank" rel="noopener" class="project-link">
+                  <a href="https://github.com/buzzmeric-bit/studentportal" target="_blank" rel="noopener" class="project-link ga-track"
+                     data-ga-event="resume_github" data-ga-label="pythaone_student_portal">
                     <i class="fab fa-github"></i> GitHub Repository
                   </a>
                 </div>
               </div>
+
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
@@ -296,239 +504,22 @@
           </div>
         </section>
 
-        <!-- Portfolio Tab -->
-        <section id="portfolio" class="tab-content">
-          <header class="section-header">
-            <h2 class="section-title">Portfolio</h2>
-            <div class="title-decoration"></div>
-          </header>
-
-          <div class="portfolio-grid">
-            <article class="portfolio-card fade-in">
-              <div class="portfolio-image">
-                <img src="assets/educap-preview.png" alt="Educap AI Assistant" class="portfolio-preview-img">
-              </div>
-              <div class="portfolio-buttons">
-                <a href="https://educap-assistant.fly.dev/" target="_blank" rel="noopener" class="portfolio-btn">
-                  <i class="fas fa-external-link-alt"></i>
-                  <span>Live Demo</span>
-                </a>
-                <a href="https://github.com/aziz-tounsi" target="_blank" rel="noopener" class="portfolio-btn">
-                  <i class="fab fa-github"></i>
-                  <span>GitHub</span>
-                </a>
-              </div>
-              <div class="portfolio-content">
-                <h4>Educap LLM Chatbot</h4>
-                <p>Real-time multilingual chatbot with memory and automatic language detection.</p>
-                <div class="portfolio-tags">
-                  <span>Python</span>
-                  <span>Flask</span>
-                  <span>LangChain</span>
-                  <span>Gemini</span>
-                  <span>Socket.IO</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="portfolio-card fade-in">
-              <div class="portfolio-image">
-                <img src="assets/sage-stone-preview.png" alt="SAGE & STONE E-commerce" class="portfolio-preview-img">
-              </div>
-              <div class="portfolio-buttons">
-                <a href="https://sage-and-stone.vercel.app/" target="_blank" rel="noopener" class="portfolio-btn">
-                  <i class="fas fa-external-link-alt"></i>
-                  <span>Live Demo</span>
-                </a>
-                <a href="https://github.com/medaziztounsi2004/site-vitrine" target="_blank" rel="noopener" class="portfolio-btn">
-                  <i class="fab fa-github"></i>
-                  <span>GitHub</span>
-                </a>
-              </div>
-              <div class="portfolio-content">
-                <h4>SAGE &amp; STONE E-commerce Store</h4>
-                <p>E-commerce platform with authentication, product management, cart, and live ratings.</p>
-                <div class="portfolio-tags">
-                  <span>React</span>
-                  <span>TypeScript</span>
-                  <span>Node.js</span>
-                  <span>Supabase</span>
-                  <span>JWT</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="portfolio-card fade-in">
-              <div class="portfolio-image">
-                <img src="assets/rytto-preview.png" alt="Rytto Habit Tracker" class="portfolio-preview-img">
-              </div>
-              <div class="portfolio-buttons">
-                <a href="https://rytto.vercel.app/" target="_blank" rel="noopener" class="portfolio-btn">
-                  <i class="fas fa-external-link-alt"></i>
-                  <span>Live Demo</span>
-                </a>
-                <a href="https://github.com/medaziztounsi2004/habit-tracker-app/releases/tag/v1.0.0" target="_blank" rel="noopener" class="portfolio-btn">
-                  <i class="fab fa-android"></i>
-                  <span>Download APK</span>
-                </a>
-              </div>
-              <div class="portfolio-content">
-                <h4>Rytto - Habit Tracker App</h4>
-                <p>Cross-platform mobile app with gamification, streaks, progress analytics, and local data persistence.</p>
-                <div class="portfolio-tags">
-                  <span>Flutter</span>
-                  <span>Dart</span>
-                  <span>Hive</span>
-                  <span>Provider</span>
-                  <span>Material Design</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="portfolio-card fade-in">
-              <div class="portfolio-image">
-                <img src="assets/pythaonelandingpage.jpg" alt="Pythaone Student Portal" class="portfolio-preview-img">
-              </div>
-              <div class="portfolio-buttons">
-                <a href="https://github.com/buzzmeric-bit/studentportal" target="_blank" rel="noopener" class="portfolio-btn">
-                  <i class="fab fa-github"></i>
-                  <span>GitHub</span>
-                </a>
-                <a href="assets/StudentPortal.mp4" target="_blank" rel="noopener" class="portfolio-btn">
-                  <i class="fas fa-video"></i>
-                  <span>VD1</span>
-                </a>
-                <a href="assets/AdminDashboard.mp4" target="_blank" rel="noopener" class="portfolio-btn">
-                  <i class="fas fa-video"></i>
-                  <span>VD2</span>
-                </a>
-              </div>
-              <div class="portfolio-content">
-                <h4>Pythaone - Student Portal</h4>
-                <p>Unified educational management system with admin dashboard and student portal, featuring timetables, grades, and analytics.</p>
-                <div class="portfolio-tags">
-                  <span>Flutter</span>
-                  <span>Dart</span>
-                  <span>Supabase</span>
-                  <span>PostgreSQL</span>
-                  <span>Multi-tenant</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <!-- Skills Tab -->
+        <!-- Skills Tab (removed % bars; kept technologies) -->
         <section id="skills" class="tab-content">
           <header class="section-header">
             <h2 class="section-title">Skills</h2>
             <div class="title-decoration"></div>
           </header>
 
-          <!-- Skills with Percentages -->
-          <div class="skills-bars fade-in">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">React.js / JavaScript</span>
-                <span class="skill-percent">90%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="90"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Python / Flask</span>
-                <span class="skill-percent">88%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="88"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Node.js / Express</span>
-                <span class="skill-percent">85%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="85"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">TypeScript</span>
-                <span class="skill-percent">82%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="82"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">C# / ASP.NET</span>
-                <span class="skill-percent">85%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="85"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Flutter / Dart</span>
-                <span class="skill-percent">82%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="82"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">SQL / PostgreSQL</span>
-                <span class="skill-percent">80%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="80"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">LangChain / AI</span>
-                <span class="skill-percent">78%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="78"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Docker / DevOps</span>
-                <span class="skill-percent">70%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="70"></div>
-              </div>
-            </div>
-            
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">React Native / Mobile</span>
-                <span class="skill-percent">75%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="75"></div>
-              </div>
-            </div>
+          <div class="about-text fade-in">
+            <p>
+              <b>Core stack:</b> React, TypeScript, Node.js, Flask, PostgreSQL, Supabase, Docker, CI/CD.
+              <br>
+              I focus on building production-ready web systems, real-time apps, and AI-powered features.
+            </p>
           </div>
 
-          <h3 class="subsection-title fade-in" style="margin-top: 40px;">Technologies</h3>
+          <h3 class="subsection-title fade-in" style="margin-top: 26px;">Technologies</h3>
 
           <!-- Frontend -->
           <div class="skills-category fade-in">
@@ -643,6 +634,92 @@
           </div>
         </section>
 
+        <!-- About Tab (moved later) -->
+        <section id="about" class="tab-content">
+          <header class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <div class="title-decoration"></div>
+          </header>
+
+          <div class="about-text fade-in">
+            <p>
+              Software Engineering student with experience in full-stack development, LLM-powered applications, and real-time systems.
+              I build production-ready web apps, real-time backends, and AI features with clean architecture.
+            </p>
+          </div>
+
+          <h3 class="subsection-title fade-in">What I'm Doing</h3>
+
+          <div class="services-grid">
+            <article class="service-card fade-in">
+              <div class="service-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div class="service-content">
+                <h4>AI Development</h4>
+                <p>Building intelligent chatbots and LLM-powered applications with Python, LangChain, and modern AI tools.</p>
+              </div>
+            </article>
+
+            <article class="service-card fade-in">
+              <div class="service-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="service-content">
+                <h4>Web Development</h4>
+                <p>Creating responsive, modern web applications using React, ASP.NET, and full-stack technologies.</p>
+              </div>
+            </article>
+
+            <article class="service-card fade-in">
+              <div class="service-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <div class="service-content">
+                <h4>Database Design</h4>
+                <p>Designing efficient database schemas and implementing data-driven solutions with SQL Server and PostgreSQL.</p>
+              </div>
+            </article>
+
+            <article class="service-card fade-in">
+              <div class="service-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="service-content">
+                <h4>Agile Teamwork</h4>
+                <p>Collaborating effectively in Scrum teams, contributing to sprints, and delivering quality software.</p>
+              </div>
+            </article>
+
+            <article class="service-card fade-in">
+              <div class="service-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <div class="service-content">
+                <h4>Mobile Development</h4>
+                <p>Building cross-platform mobile apps using Flutter and React Native with modern UI/UX design.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Languages -->
+          <h3 class="subsection-title fade-in">Languages</h3>
+          <div class="languages-grid fade-in">
+            <div class="language-card">
+              <span class="language-name">English</span>
+              <span class="language-level">Fluent</span>
+            </div>
+            <div class="language-card">
+              <span class="language-name">French</span>
+              <span class="language-level">Intermediate</span>
+            </div>
+            <div class="language-card">
+              <span class="language-name">Arabic</span>
+              <span class="language-level">Native</span>
+            </div>
+          </div>
+        </section>
+
         <!-- Contact Tab -->
         <section id="contact" class="tab-content">
           <header class="section-header">
@@ -654,16 +731,18 @@
             <div class="contact-info fade-in">
               <h3>Get In Touch</h3>
               <p>Feel free to reach out if you want to collaborate on projects, have questions, or just want to say hello!</p>
-              
+
               <div class="contact-cards">
-                <a href="mailto:jdfreg1@gmail.com" class="contact-card">
+                <a href="mailto:jdfreg1@gmail.com" class="contact-card ga-track"
+                   data-ga-event="contact_email" data-ga-label="contact_card">
                   <i class="fas fa-envelope"></i>
                   <div>
                     <h4>Email</h4>
                     <p>jdfreg1@gmail.com</p>
                   </div>
                 </a>
-                <a href="tel:+21655843441" class="contact-card">
+                <a href="tel:+21655843441" class="contact-card ga-track"
+                   data-ga-event="contact_phone" data-ga-label="contact_card">
                   <i class="fas fa-phone"></i>
                   <div>
                     <h4>Phone</h4>
@@ -682,18 +761,21 @@
               <div class="contact-social">
                 <h4>Find me on</h4>
                 <div class="social-buttons">
-                  <a href="https://github.com/aziz-tounsi" target="_blank" rel="noopener" class="social-button">
+                  <a href="https://github.com/aziz-tounsi" target="_blank" rel="noopener" class="social-button ga-track"
+                     data-ga-event="contact_github" data-ga-label="contact_section">
                     <i class="fab fa-github"></i>
                     <span>GitHub</span>
                   </a>
-                  <a href="https://www.linkedin.com/in/aziz-tounsi-4223aa2bb/" target="_blank" rel="noopener" class="social-button">
+                  <a href="https://www.linkedin.com/in/aziz-tounsi-4223aa2bb/" target="_blank" rel="noopener" class="social-button ga-track"
+                     data-ga-event="contact_linkedin" data-ga-label="contact_section">
                     <i class="fab fa-linkedin-in"></i>
                     <span>LinkedIn</span>
                   </a>
                 </div>
+              </div>
             </div>
 
-            <!-- Contact Form - Replace 'your-form-id' with actual Formspree ID from https://formspree.io -->
+            <!-- Contact Form -->
             <form class="contact-form fade-in" action="https://formspree.io/f/your-form-id" method="POST">
               <div class="form-group">
                 <input type="text" name="name" id="name" required placeholder=" ">
@@ -707,13 +789,15 @@
                 <textarea name="message" id="message" rows="5" required placeholder=" "></textarea>
                 <label for="message">Your Message</label>
               </div>
-              <button type="submit" class="submit-btn">
+              <button type="submit" class="submit-btn ga-track"
+                      data-ga-event="contact_form_submit" data-ga-label="contact_form">
                 <span>Send Message</span>
                 <i class="fas fa-paper-plane"></i>
               </button>
             </form>
           </div>
         </section>
+
       </div>
     </main>
   </div>
@@ -740,6 +824,31 @@
     },
     "knowsLanguage": ["en", "fr", "ar"]
   }
+  </script>
+
+  <!-- GA4 click tracking (no dependency on your script.js) -->
+  <script>
+    (function(){
+      function safeTrack(evtName, label){
+        try{
+          if (typeof gtag === 'function') {
+            gtag('event', evtName, {
+              event_category: 'engagement',
+              event_label: label || ''
+            });
+          }
+        } catch(e){}
+      }
+
+      document.addEventListener('click', function(e){
+        var el = e.target && e.target.closest ? e.target.closest('.ga-track') : null;
+        if(!el) return;
+
+        var evt = el.getAttribute('data-ga-event') || 'click';
+        var label = el.getAttribute('data-ga-label') || (el.textContent || '').trim().slice(0, 60);
+        safeTrack(evt, label);
+      }, true);
+    })();
   </script>
 
   <script src="js/script.js"></script>
