@@ -39,58 +39,65 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
     .featured-project-small {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 30px;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-bottom: 30px !important;
       display: flex !important;
       flex-direction: row !important;
-      align-items: center;
-      padding: 15px;
-      gap: 20px;
+      align-items: center !important;
+      padding: 20px !important;
+      gap: 30px !important;
+    }
+    .featured-project-small .portfolio-content {
+      flex: 1 1 50% !important;
+      order: 1 !important;
+      padding: 0 !important;
+      margin: 0 !important;
     }
     .featured-project-small .portfolio-image {
       flex: 0 0 45% !important;
+      width: 45% !important;
       max-width: 45% !important;
-      min-width: 45% !important;
-      border-radius: 10px;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
+      min-width: 200px !important;
+      order: 2 !important;
       display: block !important;
       visibility: visible !important;
       opacity: 1 !important;
+      position: relative !important;
+      overflow: hidden !important;
+      border-radius: 10px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      height: auto !important;
+      min-height: 150px !important;
     }
     .featured-project-small .portfolio-image img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 150px !important;
+      object-fit: cover !important;
       display: block !important;
-      margin: 0;
-      padding: 0;
       visibility: visible !important;
       opacity: 1 !important;
-    }
-    .featured-project-small .portfolio-content {
-      flex: 1;
-      padding: 0;
-      margin: 0;
+      position: relative !important;
+      border-radius: 10px !important;
     }
     .featured-project-small .portfolio-content h4 {
-      margin-top: 0;
+      margin-top: 0 !important;
     }
     .featured-project-small .portfolio-buttons {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-      margin-bottom: 0;
+      display: flex !important;
+      gap: 10px !important;
+      margin-top: 10px !important;
+      margin-bottom: 0 !important;
     }
     .featured-project-small .portfolio-tags {
-      margin-bottom: 10px;
+      margin-bottom: 10px !important;
     }
     .project-impact {
-      white-space: normal;
-      overflow: visible;
-      margin-bottom: 10px;
+      white-space: normal !important;
+      overflow: visible !important;
+      margin-bottom: 10px !important;
     }
   </style>
 </head>
@@ -192,8 +199,8 @@
                 </a>
               </div>
             </div>
-            <div class="portfolio-image" style="display: block !important; flex: 0 0 45% !important; max-width: 45% !important; visibility: visible !important; opacity: 1 !important;">
-              <img src="css/educap-preview.png" alt="Educap AI Assistant" class="portfolio-preview-img" style="display: block !important; width: 100% !important; height: auto !important; visibility: visible !important; opacity: 1 !important;">
+            <div class="portfolio-image">
+              <img src="css/educap-preview.png" alt="Educap AI Assistant" class="portfolio-preview-img">
             </div>
           </article>
 
