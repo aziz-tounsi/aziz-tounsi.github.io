@@ -45,36 +45,46 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      padding: 20px;
+      padding: 15px;
       gap: 20px;
     }
     .featured-project-small .portfolio-image {
-      order: 2;
       flex: 0 0 45%;
       max-width: 45%;
       border-radius: 10px;
       overflow: hidden;
+      margin: 0;
+      padding: 0;
     }
     .featured-project-small .portfolio-image img {
       width: 100%;
       height: auto;
       object-fit: cover;
       display: block;
+      margin: 0;
+      padding: 0;
     }
     .featured-project-small .portfolio-content {
-      order: 1;
       flex: 1;
+      padding: 0;
+      margin: 0;
+    }
+    .featured-project-small .portfolio-content h4 {
+      margin-top: 0;
     }
     .featured-project-small .portfolio-buttons {
-      order: 3;
-      position: static;
       display: flex;
       gap: 10px;
-      margin-top: 15px;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+    .featured-project-small .portfolio-tags {
+      margin-bottom: 10px;
     }
     .project-impact {
       white-space: normal;
       overflow: visible;
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -158,7 +168,6 @@
             <div class="portfolio-content">
               <h4>Educap LLM Chatbot</h4>
               <p class="project-impact"><b>30% faster responses via streaming architecture and prompt optimization.</b></p>
-              <p>Production-ready AI assistant with conversational memory and real-time streaming responses powered by LangChain and Gemini.</p>
               <div class="portfolio-tags">
                 <span>Python</span>
                 <span>Flask</span>
@@ -201,7 +210,6 @@
               <div class="portfolio-content">
                 <h4>SAGE &amp; STONE E-commerce Store</h4>
                 <p class="project-impact"><b>Full e-commerce platform with JWT auth, cart system, and live ratings.</b></p>
-                <p>E-commerce platform with JWT authentication, product management, shopping cart, and live ratings system.</p>
                 <div class="portfolio-tags">
                   <span>React</span>
                   <span>TypeScript</span>
@@ -233,7 +241,6 @@
               <div class="portfolio-content">
                 <h4>Pythaone - Student Portal</h4>
                 <p class="project-impact"><b>Unified 3 systems into one platform, cutting admin overhead by 40%.</b></p>
-                <p>Multi-role platform (admin, manager, student) with timetables, grades, payments, and analytics.</p>
                 <div class="portfolio-tags">
                   <span>Flutter</span>
                   <span>Dart</span>
@@ -261,7 +268,6 @@
               <div class="portfolio-content">
                 <h4>Rytto - Habit Tracker App</h4>
                 <p class="project-impact"><b>500+ active users with gamification, streaks, and progress analytics.</b></p>
-                <p>Cross-platform mobile app with gamification, streaks, progress analytics, and local data persistence using Hive DB.</p>
                 <div class="portfolio-tags">
                   <span>Flutter</span>
                   <span>Dart</span>
