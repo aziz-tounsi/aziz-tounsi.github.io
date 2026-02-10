@@ -63,6 +63,7 @@
       order: 1 !important;
       padding: 0 !important;
       margin: 0 !important;
+      background: transparent !important;
     }
     .featured-project-small .portfolio-image {
       flex: 0 0 50% !important;
@@ -94,24 +95,15 @@
     .featured-project-small .portfolio-content h4 {
       margin-top: 0 !important;
     }
-    /* Remove blue background from buttons */
+    /* Remove blue background from buttons container */
     .featured-project-small .portfolio-buttons {
       display: flex !important;
       gap: 10px !important;
       margin-top: 15px !important;
       margin-bottom: 0 !important;
-    }
-    .featured-project-small .portfolio-btn {
       background: transparent !important;
-      border: 1px solid var(--accent-primary, #00d9ff) !important;
-      color: var(--accent-primary, #00d9ff) !important;
-      padding: 10px 20px !important;
-      border-radius: 8px !important;
-      transition: all 0.3s ease !important;
-    }
-    .featured-project-small .portfolio-btn:hover {
-      background: var(--accent-primary, #00d9ff) !important;
-      color: #000 !important;
+      padding: 0 !important;
+      border: none !important;
     }
     .featured-project-small .portfolio-tags {
       margin-bottom: 10px !important;
@@ -121,31 +113,28 @@
       overflow: visible !important;
       margin-bottom: 10px !important;
     }
-    /* Mobile responsiveness */
+    /* Mobile responsiveness - same as other projects */
     @media (max-width: 768px) {
       .featured-project-small {
         flex-direction: column !important;
-        padding: 15px !important;
-        gap: 20px !important;
+        padding: 0 !important;
+        gap: 0 !important;
       }
       .featured-project-small .portfolio-content {
-        order: 1 !important;
+        order: 2 !important;
         flex: 1 1 100% !important;
         width: 100% !important;
+        padding: 20px !important;
       }
       .featured-project-small .portfolio-image {
-        order: 2 !important;
+        order: 1 !important;
         flex: 1 1 100% !important;
         width: 100% !important;
         max-width: 100% !important;
         min-width: unset !important;
       }
       .featured-project-small .portfolio-buttons {
-        flex-wrap: wrap !important;
-      }
-      .featured-project-small .portfolio-btn {
-        padding: 8px 16px !important;
-        font-size: 14px !important;
+        background: transparent !important;
       }
     }
   </style>
