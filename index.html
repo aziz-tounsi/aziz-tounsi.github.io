@@ -44,37 +44,33 @@
       margin-bottom: 30px;
       display: flex;
       flex-direction: row;
-      align-items: stretch;
-      max-height: 250px;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
     }
     .featured-project-small .portfolio-image {
       order: 2;
-      flex: 0 0 40%;
-      max-width: 40%;
+      flex: 0 0 45%;
+      max-width: 45%;
+      border-radius: 10px;
+      overflow: hidden;
     }
     .featured-project-small .portfolio-image img {
-      height: 100%;
+      width: 100%;
+      height: auto;
       object-fit: cover;
+      display: block;
     }
     .featured-project-small .portfolio-content {
       order: 1;
       flex: 1;
-      padding-right: 20px;
     }
     .featured-project-small .portfolio-buttons {
       order: 3;
-      position: absolute;
-      bottom: 15px;
-      left: 15px;
-    }
-    .featured-project-small .featured-badge {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      z-index: 10;
-    }
-    .featured-project-small {
-      position: relative;
+      position: static;
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
     }
     .project-impact {
       white-space: normal;
@@ -159,23 +155,6 @@
 
           <!-- Featured Project -->
           <article class="portfolio-card featured-project-small fade-in">
-            <div class="featured-badge">
-              <i class="fas fa-star"></i>
-              <span>Featured Project</span>
-            </div>
-            <div class="portfolio-image">
-              <img src="assets/educap-preview.png" alt="Educap AI Assistant" class="portfolio-preview-img">
-            </div>
-            <div class="portfolio-buttons">
-              <a href="https://educap-assistant.fly.dev/" target="_blank" rel="noopener" class="portfolio-btn">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Live Demo</span>
-              </a>
-              <a href="https://github.com/aziz-tounsi" target="_blank" rel="noopener" class="portfolio-btn">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-              </a>
-            </div>
             <div class="portfolio-content">
               <h4>Educap LLM Chatbot</h4>
               <p class="project-impact"><b>30% faster responses via streaming architecture and prompt optimization.</b></p>
@@ -187,6 +166,19 @@
                 <span>Gemini</span>
                 <span>Socket.IO</span>
               </div>
+              <div class="portfolio-buttons">
+                <a href="https://educap-assistant.fly.dev/" target="_blank" rel="noopener" class="portfolio-btn">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/aziz-tounsi" target="_blank" rel="noopener" class="portfolio-btn">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-image">
+              <img src="assets/educap-preview.png" alt="Educap AI Assistant" class="portfolio-preview-img">
             </div>
           </article>
 
