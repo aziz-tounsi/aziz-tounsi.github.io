@@ -42,6 +42,39 @@
       width: 100%;
       max-width: 100%;
       margin-bottom: 30px;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      max-height: 250px;
+    }
+    .featured-project-small .portfolio-image {
+      order: 2;
+      flex: 0 0 40%;
+      max-width: 40%;
+    }
+    .featured-project-small .portfolio-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+    .featured-project-small .portfolio-content {
+      order: 1;
+      flex: 1;
+      padding-right: 20px;
+    }
+    .featured-project-small .portfolio-buttons {
+      order: 3;
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+    }
+    .featured-project-small .featured-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      z-index: 10;
+    }
+    .featured-project-small {
+      position: relative;
     }
     .project-impact {
       white-space: normal;
