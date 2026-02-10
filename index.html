@@ -38,68 +38,6 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Featured project layout - desktop only */
-    @media (min-width: 769px) {
-      .featured-project-small {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-bottom: 30px !important;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        padding: 20px !important;
-        gap: 30px !important;
-      }
-      .featured-project-small .portfolio-content {
-        flex: 1 1 45% !important;
-        order: 1 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        background: transparent !important;
-      }
-      .featured-project-small .portfolio-image {
-        flex: 0 0 50% !important;
-        width: 50% !important;
-        max-width: 50% !important;
-        min-width: 250px !important;
-        order: 2 !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: relative !important;
-        overflow: visible !important;
-        border-radius: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        height: auto !important;
-      }
-      .featured-project-small .portfolio-image img {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: relative !important;
-        border-radius: 0 !important;
-        border: none !important;
-      }
-      .featured-project-small .portfolio-content h4 {
-        margin-top: 0 !important;
-      }
-      .featured-project-small .portfolio-buttons {
-        display: flex !important;
-        gap: 10px !important;
-        margin-top: 15px !important;
-        margin-bottom: 0 !important;
-        background: transparent !important;
-        padding: 0 !important;
-        border: none !important;
-      }
-      .featured-project-small .portfolio-tags {
-        margin-bottom: 10px !important;
-      }
-    }
     .project-impact {
       white-space: normal !important;
       overflow: visible !important;
@@ -182,36 +120,35 @@
             <div class="title-decoration"></div>
           </header>
 
-          <!-- Featured Project -->
-          <article class="portfolio-card featured-project-small fade-in">
-            <div class="portfolio-image">
-              <img src="css/educap-preview.png" alt="Educap AI Assistant" class="portfolio-preview-img">
-            </div>
-            <div class="portfolio-buttons">
-              <a href="https://educap-assistant.fly.dev/" target="_blank" rel="noopener" class="portfolio-btn">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Live Demo</span>
-              </a>
-              <a href="https://github.com/aziz-tounsi" target="_blank" rel="noopener" class="portfolio-btn">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-              </a>
-            </div>
-            <div class="portfolio-content">
-              <h4>Educap LLM Chatbot</h4>
-              <p class="project-impact"><b>30% faster responses via streaming architecture and prompt optimization.</b></p>
-              <div class="portfolio-tags">
-                <span>Python</span>
-                <span>Flask</span>
-                <span>LangChain</span>
-                <span>Gemini</span>
-                <span>Socket.IO</span>
-              </div>
-            </div>
-          </article>
-
           <!-- Regular Projects -->
           <div class="portfolio-grid">
+            <article class="portfolio-card fade-in">
+              <div class="portfolio-image">
+                <img src="css/educap-preview.png" alt="Educap AI Assistant" class="portfolio-preview-img">
+              </div>
+              <div class="portfolio-buttons">
+                <a href="https://educap-assistant.fly.dev/" target="_blank" rel="noopener" class="portfolio-btn">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/aziz-tounsi" target="_blank" rel="noopener" class="portfolio-btn">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+              <div class="portfolio-content">
+                <h4>Educap LLM Chatbot</h4>
+                <p class="project-impact"><b>30% faster responses via streaming architecture and prompt optimization.</b></p>
+                <div class="portfolio-tags">
+                  <span>Python</span>
+                  <span>Flask</span>
+                  <span>LangChain</span>
+                  <span>Gemini</span>
+                  <span>Socket.IO</span>
+                </div>
+              </div>
+            </article>
+
             <article class="portfolio-card fade-in">
               <div class="portfolio-image">
                 <img src="assets/sage-stone-preview.png" alt="SAGE & STONE E-commerce" class="portfolio-preview-img">
